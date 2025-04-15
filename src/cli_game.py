@@ -7,11 +7,10 @@ This module provides a terminal-based interface for playing the game.
 import os
 import sys
 import time
-from typing import List, Dict, Tuple
 
-# Add the parent directory to the path so we can import the game_logic module
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src.game_logic import (
+# Import game logic - fixed import approach
+# We use actual relative import for better modularity
+from game_logic import (
     generate_secret_number,
     evaluate_guess,
     is_valid_guess

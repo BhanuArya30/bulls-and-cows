@@ -8,9 +8,9 @@ import sys
 import time
 import streamlit as st
 
-# Add the parent directory to the path so we can import the game_logic module
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src.game_logic import (
+# Import game logic - fixed import approach
+# We use actual relative import for better modularity
+from game_logic import (
     generate_secret_number,
     evaluate_guess,
     is_valid_guess
@@ -29,6 +29,7 @@ def initialize_session_state():
         st.session_state.total_games = 0
         st.session_state.victories = 0
         st.session_state.best_score = float('inf')
+        st.session_state.reset_input = False  # Flag to track when to reset input
 
 
 def reset_game():
@@ -46,9 +47,8 @@ def reset_game():
     st.session_state.game_won = False
     st.session_state.last_guess = ""
     st.session_state.start_time = time.time()
-    # Clear the input field by setting it to an empty string
-    if "guess" in st.session_state:
-        st.session_state.guess = ""
+    # Set this flag instead of directly modifying the input widget
+    st.session_state.reset_input = True
 
 
 def display_stats():
@@ -123,10 +123,16 @@ def main():
                 reset_game()
                 st.rerun()
         
+        # Handle the reset input flag
+        input_value = "" if st.session_state.get("reset_input", False) else st.session_state.get("guess", "")
+        if st.session_state.get("reset_input", False):
+            st.session_state.reset_input = False
+        
         # Input form
         with st.form(key="guess_form"):
             guess = st.text_input(
                 "Enter your 4-digit guess (all digits must be unique):",
+                value=input_value,
                 key="guess",
                 max_chars=4
             )
