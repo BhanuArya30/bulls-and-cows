@@ -1,4 +1,4 @@
-# 🐮 Bulls and Cows Game 🐮
+# Bulls and Cows Game
 
 
 A modern implementation of the classic "Bulls and Cows" number guessing game with both CLI and web interfaces powered by Streamlit.
