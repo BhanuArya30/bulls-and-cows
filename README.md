@@ -1,11 +1,9 @@
 # 🐮 Bulls and Cows Game 🐮
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)]()
 
 A modern implementation of the classic "Bulls and Cows" number guessing game with both CLI and web interfaces powered by Streamlit.
 
-## 🎮 Game Rules
+## Game Rules
 
 Bulls and Cows is a code-breaking game where:
 
@@ -19,19 +17,19 @@ For example, if the secret number is "7846" and you guess "7814", you get:
 - 2 Bulls (7 and 4 are in the correct position)
 - 1 Cow (8 is correct but in the wrong position)
 
-## 🚀 Features
+## Features
 
 - Two game interfaces: CLI for quick play and Streamlit web app for a richer experience
 - Interactive feedback and guess history
 - Game statistics tracking
 - Clean, modern UI in the web version
 
-## 📋 Requirements
+## Requirements
 
 - Python 3.7+
 - For the web app: Streamlit
 
-## 🛠️ Installation
+## Installation
 
 Clone the repository:
 ```bash
@@ -44,7 +42,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-## 🎯 Usage
+## Usage
 
 ### Web Application (Recommended)
 
@@ -62,13 +60,13 @@ For a quick game in the terminal:
 python src/cli_game.py
 ```
 
-## 🧪 Running Tests
+## Running Tests
 
 ```bash
 pytest tests/
 ```
 
-## 📝 Project Structure
+## Project Structure
 
 ```
 bulls-and-cows/
@@ -86,7 +84,7 @@ bulls-and-cows/
     └── test_game_logic.py
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -95,7 +93,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
